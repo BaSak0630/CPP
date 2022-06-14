@@ -1,0 +1,32 @@
+매개변수의 디폹트 값
+
+#include <iostream>
+
+int adder(int num1 = 1, int num2 = 2);
+
+int adder(int num1, int num2)// int adder(int num = 1, int num2 =2) 
+{
+	return num1 + num2;
+}
+
+int main()
+{
+	std::cout<<adder()<<std::endl;
+	std::cout<<adder(5)<<std::endl;
+	std::cout<<adder(3,5)<<std::endl;
+
+	return 0;
+}
+
+함수의 원형을 별도로 선언하는 경우, 매개변수의 디폴트 값은 함수의 원형 선언에만 위치시켜야 한다.
+
+위 코드처럼 함수 선언시 매개변수의 미리 값을 고정시켜서 함수 호출 시  인자가 전달하지 않으면 
+미리 선언해준 디폴트 값이 적용된다. 
+
+여기서 주의해야 할 것은 
+
+int YourFunc(int num1 = 10, int num2 = 20, int num3)
+은 불가능하다 그이유는 함수에 전달되는 인자가 왼쪽에서붜 오른쪽으로 채워지기 때문이다
+
+YourFunc(,,30)이 안되기 떄문이다.
+
