@@ -1,0 +1,32 @@
+#include <iostream>
+
+void MyFunc()
+{
+	std::cout<<"MyFunc() caled"<< std::endl;
+}
+
+void MyFunc(char c)
+{
+	std::wcout<<"MyFunc(char c) called" <<std::endl;
+}
+void MyFunc(int a, int b)
+{
+	std::wcout<<"MyFunc(int a, int b) called" <<std::endl;
+}
+
+int main()
+{
+	MyFunc();
+	MyFunc('A');
+	MyFunc(12,13);
+	return 0;
+}
+
+/*
+  Cpp의 함수 오버로딩 
+  
+  C에서는 동일한 이름의 복수의 함수가 존재하지 못하는데 Cpp에서는 
+  동일한 함수 명이지만 함수들이 다른 매개변수(parameter)를 가지고 있다면 이를 허용한다.
+  자료형또는 갯수가 달라야한다.
+  
+*/
